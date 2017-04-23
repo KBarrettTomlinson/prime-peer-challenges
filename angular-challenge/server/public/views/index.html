@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Real Estate List</title>
+
+    <link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.css" />
+
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/scripts/data.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+    <div class="header">
+      <h1>Angular Realty</h1>
+    </div>
+
+
+    <div id = 'displayDiv' ng-controller="ListingDisplayController" >
+      <div class = 'row'>
+        <!-- <div class  = 'col-sm-3 panel panel-default' ng-repeat="unit in listingArray | orderBy: ['city','rent','cost','sqft']" > -->
+        <div class  = 'col-sm-3 panel panel-default' ng-repeat="unit in listingArray" >
+          <div style = "margin:5px">
+            <div class="row panel-body">
+              <tr>
+                <td><b>{{title(unit)}} </b></td>
+                <td>${{unit.cost}}{{unit.rent}}.00</td>
+              </tr>
+            </div>
+
+            <div class="row panel-body">
+              <tr>
+                <td><b>SqFt: </b></td>
+                <td>{{unit.sqft}}</td>
+              </tr>
+            </div>
+
+            <div class="row panel-body" >
+              <tr>
+                <td><b>City: </b></td>
+                <td>{{unit.city}}</td>
+              </tr>
+            </div>
+
+            <div style="text-align:center" class="row panel-body" >
+              <button type="button" class="btn btn-default" ng-click="deleteDiv($index)" ><span class="glyphicon glyphicon-remove"></span></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </body>
+</html>

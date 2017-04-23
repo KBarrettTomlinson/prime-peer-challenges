@@ -1,0 +1,21 @@
+[class *= 'col-']{
+  background-color: khaki;
+  text-align: center;
+}
+
+.form-inline{
+  background-color: antiquewhite;
+}
+
+#headerContainer{
+  background-color: dodgerblue;
+}
+
+#inputFormDiv{
+
+  background-color: whitesmoke;
+}
+
+#inputForm{
+  text-align: center;
+}

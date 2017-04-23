@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Chi MEAN</title>
+
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/client.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Movies</h1>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-3">
+                <div id="inputFormDiv">
+                    <div ng-controller="InputController">
+                        <input type="text" placeholder="Title" ng-model="movieObject.title"></input><br>
+                        <input type="text" placeholder="Director" ng-model="movieObject.director"></input><br>
+                        <input type="text" placeholder="Length in Min" ng-model="movieObject.length"></input><br>
+                        <input type="text" placeholder="Description" ng-model="movieObject.description"></input><br>
+                        <button type="button" class="btn btn-primary" name="button" ng-click="addObject(movieObject)">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-9">
+                <div ng-controller="DisplayController">
+                    <div ng-repeat="movie in arrayObject.movieArray">
+                        <div class="panel panel-default">
+                          <div class = 'row'>
+                            <div class = "col-md-6">
+                              <div class="row panel-body">
+                                  <p>{{movie.title}}</p>
+                              </div>
+                              <div class="row panel-body">
+                                  <p>{{movie.director}}</p>
+                              </div>
+                              <div class="row panel-body">
+                                  <p>{{movie.length}}</p>
+                              </div>
+                              <div class="row panel-body">
+                                  <p>{{movie.description}}</p>
+                              </div>
+                              <div class="row panel-body">
+                                <span>
+                                  <button type="button"  class="btn btn-primary" name="button">Update</button>
+                                  <button type="button"  class="btn btn-primary" name="button">Delete</button>
+                                </span>
+                              </div>
+                            </div>
+
+                            <div class = "col-md-6">
+                              <div id = 'imageDiv'>
+                                <img src="views/images/mysteryMan.jpg" class="img-rounded">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

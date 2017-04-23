@@ -1,0 +1,21 @@
+{
+  "name": "mochacourse",
+  "version": "1.0.0",
+  "description": "Express challenge tested with mocha and chai",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha": "^3.1.2",
+    "proxyquire": "^1.7.10",
+    "sinon": "^1.17.6"
+  },
+  "scripts": {
+    "start": "node lib/server/app.js",
+    "test": "./node_modules/.bin/mocha -R list"
+  },
+  "author": "Luke Schlangen",
+  "license": "ISC"
+}
